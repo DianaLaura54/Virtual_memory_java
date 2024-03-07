@@ -6,9 +6,9 @@ import java.math.BigInteger;
 
 public class physicalMemory {
     private List<physicalAddress> physicalAddressList;
-    public physicalMemory(List<physicalAddress>physicalAddressList)
-    {
-        this.physicalAddressList=physicalAddressList;
+
+    public physicalMemory(List<physicalAddress> physicalAddressList) {
+        this.physicalAddressList = physicalAddressList;
     }
 
     public static String toString(List<physicalAddress> physicalAddressList) {
@@ -16,7 +16,8 @@ public class physicalMemory {
 
         for (int i = 0; i < physicalAddressList.size(); i++) {
 
-            result.append(physicalAddressList.get(i).getFrame()).append(" ").append(physicalAddressList.get(i).getContent()).append("\n");}
+            result.append(physicalAddressList.get(i).getFrame()).append(" ").append(physicalAddressList.get(i).getContent()).append("\n");
+        }
 
         return result.toString();
     }

@@ -5,43 +5,42 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class view extends JFrame {
-    private   JScrollPane scrollPane_1;
-    private   JScrollPane scrollPane;
-    private  JTextArea processTextArea;
+    private JScrollPane scrollPane_1;
+    private JScrollPane scrollPane;
+    private JTextArea processTextArea;
     private JTextArea textArea;
     private JScrollPane scrollPane_1_1;
     private JTextArea textArea_1;
-    private  JScrollPane scrollPane_1_2;
-    private  JTextArea textArea_2;
+    private JScrollPane scrollPane_1_2;
+    private JTextArea textArea_2;
     private JLabel lblNewLabel;
     private JLabel lblNewLabel_1;
     private JLabel lblNewLabel_2;
-    private  JLabel lblNewLabel_1_1;
+    private JLabel lblNewLabel_1_1;
     private JLabel lblNewLabel_3;
 
 
-    private  JTextField textField;
+    private JTextField textField;
     private JTextField textField_1;
     private JLabel lblNewLabel_4;
     private JLabel lblNewLabel_4_1;
-    private JButton  btnNewButton_1;
+    private JButton btnNewButton_1;
     private JLabel lblNewLabel_5;
     private JLabel lblNewLabel_6;
     private JLabel lblNewLabel_7;
     private JLabel lblNewLabel_6_1;
-  private JTextArea textArea_3;
-  private JTextArea textArea_3_1;
- private JTextField textField_2;
- private JLabel lblNewLabel_4_1_1;
- private JTextArea  textArea_3_2;
- private JButton btnNewButton_1_1;
-  private JLabel lblNewLabel_8;
+    private JTextArea textArea_3;
+    private JTextArea textArea_3_1;
+    private JTextField textField_2;
+    private JLabel lblNewLabel_4_1_1;
+    private JTextArea textArea_3_2;
+    private JButton btnNewButton_1_1;
+    private JLabel lblNewLabel_8;
     private JLabel lblNewLabel_8_1;
     private JLabel lblNewLabel_8_2;
     private JLabel lblNewLabel_8_3;
 
-    public view()
-    {
+    public view() {
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(100, 100, 1572, 1032);
@@ -111,8 +110,6 @@ public class view extends JFrame {
         this.getContentPane().add(lblNewLabel_3);
 
 
-
-
         textField = new JTextField();
         textField.setFont(new Font("Arial", Font.PLAIN, 11));
         textField.setBounds(312, 923, 96, 46);
@@ -127,7 +124,7 @@ public class view extends JFrame {
         textField_1.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textField_1);
 
-         lblNewLabel_4 = new JLabel("process");
+        lblNewLabel_4 = new JLabel("process");
         lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 15));
         lblNewLabel_4.setBounds(322, 907, 69, 14);
         this.getContentPane().add(lblNewLabel_4);
@@ -155,33 +152,32 @@ public class view extends JFrame {
         lblNewLabel_5.setBounds(876, 834, 175, 53);
         this.getContentPane().add(lblNewLabel_5);
 
-         lblNewLabel_6 = new JLabel("Hit:");
+        lblNewLabel_6 = new JLabel("Hit:");
         lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 15));
         lblNewLabel_6.setBounds(864, 898, 81, 33);
         this.getContentPane().add(lblNewLabel_6);
 
-         lblNewLabel_6_1 = new JLabel("Miss:");
+        lblNewLabel_6_1 = new JLabel("Miss:");
         lblNewLabel_6_1.setFont(new Font("Arial", Font.PLAIN, 15));
         lblNewLabel_6_1.setBounds(864, 938, 81, 33);
         this.getContentPane().add(lblNewLabel_6_1);
 
-         lblNewLabel_7 = new JLabel("Time:");
+        lblNewLabel_7 = new JLabel("Time:");
         lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 26));
         lblNewLabel_7.setBounds(560, 106, 119, 34);
         this.getContentPane().add(lblNewLabel_7);
 
-         textArea_3 = new JTextArea();
+        textArea_3 = new JTextArea();
         textArea_3.setFont(new Font("Arial", Font.PLAIN, 15));
         textArea_3.setBounds(901, 898, 101, 33);
         textArea_3.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textArea_3);
 
-       textArea_3_1 = new JTextArea();
+        textArea_3_1 = new JTextArea();
         textArea_3_1.setFont(new Font("Arial", Font.PLAIN, 15));
         textArea_3_1.setBounds(901, 938, 101, 33);
         textArea_3_1.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textArea_3_1);
-
 
 
         lblNewLabel_4_1_1 = new JLabel("offset");
@@ -197,15 +193,14 @@ public class view extends JFrame {
         this.getContentPane().add(textField_2);
 
 
-
-         textArea_3_2 = new JTextArea();
+        textArea_3_2 = new JTextArea();
         textArea_3_2.setFont(new Font("Arial", Font.PLAIN, 17));
         textArea_3_2.setBounds(644, 107, 101, 33);
         textArea_3_2.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textArea_3_2);
 
 
-         lblNewLabel_8 = new JLabel("Page+offset");
+        lblNewLabel_8 = new JLabel("Page+offset");
         lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 25));
         lblNewLabel_8.setBounds(144, 118, 300, 33);
         this.getContentPane().add(lblNewLabel_8);
@@ -215,12 +210,12 @@ public class view extends JFrame {
         lblNewLabel_8_1.setBounds(1213, 911, 300, 33);
         this.getContentPane().add(lblNewLabel_8_1);
 
-         lblNewLabel_8_2 = new JLabel("Page+frame");
+        lblNewLabel_8_2 = new JLabel("Page+frame");
         lblNewLabel_8_2.setFont(new Font("Arial", Font.PLAIN, 25));
         lblNewLabel_8_2.setBounds(603, 198, 300, 33);
         this.getContentPane().add(lblNewLabel_8_2);
 
-         lblNewLabel_8_3 = new JLabel("Page+frame+present bit");
+        lblNewLabel_8_3 = new JLabel("Page+frame+present bit");
         lblNewLabel_8_3.setFont(new Font("Arial", Font.PLAIN, 25));
         lblNewLabel_8_3.setBounds(644, 805, 300, 33);
         this.getContentPane().add(lblNewLabel_8_3);
@@ -231,24 +226,31 @@ public class view extends JFrame {
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
+
     public void setTextArea(String TextArea) {
         this.processTextArea.setText(TextArea);
     }
+
     public void setTextArea2(String TextArea) {
         this.textArea.setText(TextArea);
     }
+
     public void setTextArea3(String TextArea) {
         this.textArea_1.setText(TextArea);
     }
+
     public void setTextArea4(String TextArea) {
         this.textArea_2.setText(TextArea);
     }
+
     public void setTextArea_3_2(String TextArea) {
         this.textArea_3_2.setText(TextArea);
     }
+
     public void setTextArea_3(int TextArea_3) {
         this.textArea_3.setText(String.valueOf(TextArea_3));
     }
+
     public void setTextArea_3_1(int TextArea_3_1) {
         this.textArea_3_1.setText(String.valueOf(TextArea_3_1));
     }
@@ -261,16 +263,16 @@ public class view extends JFrame {
     public int gettextField2() {
         return Integer.parseInt(textField_1.getText());
     }
-    public int gettextField3()
-    {
+
+    public int gettextField3() {
         return Integer.parseInt(textField_2.getText());
     }
-    public void addCreateListener2(ActionListener action)
-    {
+
+    public void addCreateListener2(ActionListener action) {
         btnNewButton_1.addActionListener(action);
     }
-    public void addCreateListener3(ActionListener action)
-    {
+
+    public void addCreateListener3(ActionListener action) {
         btnNewButton_1_1.addActionListener(action);
     }
 

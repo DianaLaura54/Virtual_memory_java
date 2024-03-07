@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 public class view2 extends JFrame {
     private JButton btnNewButton;
-    private  JTextField textField;
+    private JTextField textField;
     private JLabel lblNewLabel_4;
     private JTextField textField_1;
     private JTextField textField_2;
@@ -13,12 +13,11 @@ public class view2 extends JFrame {
     private JTextField textField_3;
     private JLabel lblNewLabel_4_1_2;
     private JTextField textField_4;
-    private JLabel  lblNewLabel_4_1_2_1;
+    private JLabel lblNewLabel_4_1_2_1;
     private JLabel lblNewLabel_3;
 
 
-    public view2()
-    {
+    public view2() {
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(100, 100, 1572, 1032);
@@ -47,7 +46,7 @@ public class view2 extends JFrame {
         this.getContentPane().add(textField);
         textField.setColumns(10);
 
-         lblNewLabel_4 = new JLabel("nr processes");
+        lblNewLabel_4 = new JLabel("nr processes");
         lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 30));
         lblNewLabel_4.setBounds(810, 206, 183, 22);
         this.getContentPane().add(lblNewLabel_4);
@@ -66,7 +65,7 @@ public class view2 extends JFrame {
         textField_2.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textField_2);
 
-         lblNewLabel_4_1 = new JLabel("physical page size");
+        lblNewLabel_4_1 = new JLabel("physical page size");
         lblNewLabel_4_1.setFont(new Font("Arial", Font.PLAIN, 30));
         lblNewLabel_4_1.setBounds(123, 406, 263, 40);
         this.getContentPane().add(lblNewLabel_4_1);
@@ -95,7 +94,7 @@ public class view2 extends JFrame {
         textField_4.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textField_4);
 
-       lblNewLabel_4_1_2_1 = new JLabel("number of TLB");
+        lblNewLabel_4_1_2_1 = new JLabel("number of TLB");
         lblNewLabel_4_1_2_1.setFont(new Font("Arial", Font.PLAIN, 30));
         lblNewLabel_4_1_2_1.setBounds(479, 206, 200, 22);
         this.getContentPane().add(lblNewLabel_4_1_2_1);
@@ -108,6 +107,7 @@ public class view2 extends JFrame {
     public int gettextField() {
         return Integer.parseInt(textField.getText());
     }
+
     public int gettextField1() {
         return Integer.parseInt(textField_1.getText());
     }
@@ -124,10 +124,10 @@ public class view2 extends JFrame {
         return Integer.parseInt(textField_4.getText());
     }
 
-    public void addCreateListener(ActionListener action)
-    {
+    public void addCreateListener(ActionListener action) {
         btnNewButton.addActionListener(action);
     }
+
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }

@@ -6,11 +6,11 @@ import static java.lang.Math.log;
 public class processes {
     Map<Integer, List<virtualAddress>> processesMap;
 
-    public processes()
-    {
+    public processes() {
         this.processesMap = new HashMap<>();
 
     }
+
     public static String toString(List<virtualAddress> virtualAddressList) {
         StringBuilder result = new StringBuilder();
 
@@ -20,6 +20,7 @@ public class processes {
         }
         return result.toString();
     }
+
     public void addProcess(int index, List<virtualAddress> virtualAddressList) {
         processesMap.put(index, virtualAddressList);
     }
@@ -28,13 +29,11 @@ public class processes {
         return processesMap.get(index);
     }
 
-    public static int findInformation(List <virtualAddress> virtualAddressList,int page)
-    { int ok=0;
-        for(int i=0;i<virtualAddressList.size();i++)
-        {
-            if( virtualAddressList.get(i).getNumberPage()==page)
-            {
-                ok=1;  //find if the page exists in the virtual address list
+    public static int findInformation(List<virtualAddress> virtualAddressList, int page) {
+        int ok = 0;
+        for (int i = 0; i < virtualAddressList.size(); i++) {
+            if (virtualAddressList.get(i).getNumberPage() == page) {
+                ok = 1;  //find if the page exists in the virtual address list
             }
         }
         return ok;

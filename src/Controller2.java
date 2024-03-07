@@ -19,7 +19,7 @@ public class Controller2 {
     private int hit;
 
 
-    public Controller2(view view, processes processList, int dex, int process, List<pageTable> pageTable1, physicalMemory physicalMemory1, int time,List<tlb> buffer, int tlb1, int physicalSize, int offset, int hit, int miss) {
+    public Controller2(view view, processes processList, int dex, int process, List<pageTable> pageTable1, physicalMemory physicalMemory1, int time, List<tlb> buffer, int tlb1, int physicalSize, int offset, int hit, int miss) {
         this.view = view;
         this.view.addCreateListener2(new CreateListener2());
         this.view.addCreateListener3(new CreateListener3());
@@ -55,34 +55,30 @@ public class Controller2 {
                 String s3 = "";
                 String s4 = "";
                 String s5 = " ";
-                String s6= "";
-                if (processes.findInformation(virtualAddress1,y) == 0) {//find if the page exists in that specific process,if it does leave it alone,if not add it
+                String s6 = "";
+                if (processes.findInformation(virtualAddress1, y) == 0) {//find if the page exists in that specific process,if it does leave it alone,if not add it
                     virtualAddress1.add(address);
-                    processList.addProcess(x, virtualAddress1);}
-                int var=physicalAddress.hitMiss(buffer,pageTable1,x,y); //search for that page,if it exists in the tlb or page table
-                if(var==0)
-                {
+                    processList.addProcess(x, virtualAddress1);
+                }
+                int var = physicalAddress.hitMiss(buffer, pageTable1, x, y); //search for that page,if it exists in the tlb or page table
+                if (var == 0) {
                     miss++; //it doesn't exist anywhere
 
-                }
-                else if(var==3)
-                {
+                } else if (var == 3) {
                     dex--; //the page exists but it is not that process,so it is a hit anyway
                     hit++;
 
-                }
-                else
-                {
-                 dex--; //the page exists and it is in that process,so it is a hit
-                 hit++;
+                } else {
+                    dex--; //the page exists and it is in that process,so it is a hit
+                    hit++;
 
                 }
-                    pageTable.addTo(x,y,dex,pageTable1,physicalSize,offset); //add it to the page table or use FIFO in the page table
-                int q=pageTable.findFrame(pageTable1,y); //find the frame number and modify the tlb, put the physical address in RAM
-                    tlb.addTo(x,dex,y,buffer,tlb1,q);
-                    physicalAddress.addAddress(physicalAddress1,pageTable1,physicalSize,offset,z,dex);
-                    dex++;
-                    time++;
+                pageTable.addTo(x, y, dex, pageTable1, physicalSize, offset); //add it to the page table or use FIFO in the page table
+                int q = pageTable.findFrame(pageTable1, y); //find the frame number and modify the tlb, put the physical address in RAM
+                tlb.addTo(x, dex, y, buffer, tlb1, q);
+                physicalAddress.addAddress(physicalAddress1, pageTable1, physicalSize, offset, z, dex);
+                dex++;
+                time++;
 
 
                 for (int i = 1; i <= process; i++) {
@@ -90,15 +86,16 @@ public class Controller2 {
                     s = s + processes.toString(processList.getVirtualAddressList(i));
                 }
 
-                for(int t=1;t<=process;t++)
-                {s2 = s2 + "Page table for process " + t + "\n";
-                    s2 = s2 + pageTable.toString(pageTable1, t);}
+                for (int t = 1; t <= process; t++) {
+                    s2 = s2 + "Page table for process " + t + "\n";
+                    s2 = s2 + pageTable.toString(pageTable1, t);
+                }
 
                 physicalMemory physicalMemory1 = new physicalMemory(physicalAddress1);
 
                 s3 = s3 + physicalMemory1.toString(physicalAddress1);
-                s5=s5+ tlb.toString(buffer);
-                s6=String.valueOf(time);
+                s5 = s5 + tlb.toString(buffer);
+                s6 = String.valueOf(time);
 
                 view.setTextArea(s);
                 view.setTextArea3(s2);
@@ -123,7 +120,7 @@ public class Controller2 {
                 int z = view.gettextField3(); //offset
 
                 List<physicalAddress> physicalAddress1 = physicalMemory1.getPhysicalAddressList();
-                String builder= physicalAddress.findInformation(pageTable1,buffer,x,y); //find if the page is in the TLB,page table,or if it exists
+                String builder = physicalAddress.findInformation(pageTable1, buffer, x, y); //find if the page is in the TLB,page table,or if it exists
                 view.showMessage(builder);
 
 
