@@ -1,16 +1,13 @@
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Position;
-import javax.swing.text.View;
-import java.awt.*;
-
+import controller.SelectionController;
+import view.UserView;
 
 public class Main {
     public static void main(String[] args) {
 
-        view2 view2 = new view2();
+        UserView view2 = new UserView();
 
 
-        Controller controller = new Controller(view2);
+        SelectionController controller = new SelectionController(view2);
 
     }
 }
