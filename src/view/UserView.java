@@ -86,7 +86,7 @@ public class UserView extends JFrame {
 
         lblNewLabel_4_1_2 = new JLabel("virtual memory size");
         lblNewLabel_4_1_2.setFont(new Font("Arial", Font.PLAIN, 30));
-        lblNewLabel_4_1_2.setBounds(138, 185, 263, 65);
+        lblNewLabel_4_1_2.setBounds(138, 185, 300, 65);
         this.getContentPane().add(lblNewLabel_4_1_2);
 
         textField_4 = new JTextField();
@@ -98,7 +98,7 @@ public class UserView extends JFrame {
 
         lblNewLabel_4_1_2_1 = new JLabel("number of TLB");
         lblNewLabel_4_1_2_1.setFont(new Font("Arial", Font.PLAIN, 30));
-        lblNewLabel_4_1_2_1.setBounds(479, 206, 200, 22);
+        lblNewLabel_4_1_2_1.setBounds(479, 206, 300, 40);  // Increase width to 300
         this.getContentPane().add(lblNewLabel_4_1_2_1);
 
 
