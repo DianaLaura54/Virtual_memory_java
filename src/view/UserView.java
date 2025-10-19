@@ -98,7 +98,7 @@ public class UserView extends JFrame {
 
         lblNewLabel_4_1_2_1 = new JLabel("number of TLB");
         lblNewLabel_4_1_2_1.setFont(new Font("Arial", Font.PLAIN, 30));
-        lblNewLabel_4_1_2_1.setBounds(479, 206, 300, 40);  
+        lblNewLabel_4_1_2_1.setBounds(479, 206, 300, 40);
         this.getContentPane().add(lblNewLabel_4_1_2_1);
 
 
