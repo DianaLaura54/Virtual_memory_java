@@ -18,8 +18,6 @@ public class SelectionView extends JFrame {
     private JLabel lblNewLabel_2;
     private JLabel lblNewLabel_1_1;
     private JLabel lblNewLabel_3;
-
-
     private JTextField textField;
     private JTextField textField_1;
     private JLabel lblNewLabel_4;
@@ -35,190 +33,172 @@ public class SelectionView extends JFrame {
     private JLabel lblNewLabel_4_1_1;
     private JTextArea textArea_3_2;
     private JButton btnNewButton_1_1;
-    private JLabel lblNewLabel_8;
-    private JLabel lblNewLabel_8_1;
-    private JLabel lblNewLabel_8_2;
-    private JLabel lblNewLabel_8_3;
 
     public SelectionView() {
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(100, 100, 1572, 1032);
-        // this.getContentPane().setBorder(new EmptyBorder(5, 5, 5, 5));
+        this.setBounds(100, 100, 1200, 800);
         this.getContentPane().setBackground(new Color(255, 215, 0));
         this.getContentPane().setLayout(null);
 
+        // Main title
+        lblNewLabel_3 = new JLabel("Virtual Memory Simulator");
+        lblNewLabel_3.setFont(new Font("Arial", Font.BOLD, 26));
+        lblNewLabel_3.setBounds(380, 10, 420, 40);
+        this.getContentPane().add(lblNewLabel_3);
+
+        // Left panel - Processes and virtual addresses
+        lblNewLabel = new JLabel("Processes (Page + Offset)");
+        lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        lblNewLabel.setBounds(20, 55, 280, 25);
+        this.getContentPane().add(lblNewLabel);
+
         scrollPane = new JScrollPane();
-        scrollPane.setBounds(56, 151, 372, 658);
+        scrollPane.setBounds(20, 85, 280, 380);
         this.getContentPane().add(scrollPane);
 
         processTextArea = new JTextArea();
-        processTextArea.setFont(new Font("Arial", Font.PLAIN, 25));
+        processTextArea.setFont(new Font("Arial", Font.PLAIN, 14));
         processTextArea.setBackground(new Color(255, 250, 205));
         scrollPane.setViewportView(processTextArea);
 
+        // Middle-top panel - TLB
+        lblNewLabel_1 = new JLabel("TLB (Page : Frame)");
+        lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 16));
+        lblNewLabel_1.setBounds(320, 55, 260, 25);
+        this.getContentPane().add(lblNewLabel_1);
+
+        // Time display
+        lblNewLabel_7 = new JLabel("Time:");
+        lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblNewLabel_7.setBounds(580, 55, 50, 25);
+        this.getContentPane().add(lblNewLabel_7);
+
+        textArea_3_2 = new JTextArea();
+        textArea_3_2.setFont(new Font("Arial", Font.PLAIN, 14));
+        textArea_3_2.setBounds(635, 55, 60, 25);
+        textArea_3_2.setBackground(new Color(255, 250, 205));
+        textArea_3_2.setEditable(false);
+        this.getContentPane().add(textArea_3_2);
+
         scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(560, 236, 442, 257);
+        scrollPane_1.setBounds(320, 85, 270, 165);
         this.getContentPane().add(scrollPane_1);
 
         textArea = new JTextArea();
-        textArea.setFont(new Font("Arial", Font.PLAIN, 25));
+        textArea.setFont(new Font("Arial", Font.PLAIN, 14));
         textArea.setBackground(new Color(255, 250, 205));
         scrollPane_1.setViewportView(textArea);
 
+        // Middle-bottom panel - Page Tables
+        lblNewLabel_2 = new JLabel("Page Tables (Page : Frame : Valid)");
+        lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 16));
+        lblNewLabel_2.setBounds(320, 260, 300, 25);
+        this.getContentPane().add(lblNewLabel_2);
+
         scrollPane_1_1 = new JScrollPane();
-        scrollPane_1_1.setBounds(560, 537, 442, 257);
+        scrollPane_1_1.setBounds(320, 290, 270, 175);
         this.getContentPane().add(scrollPane_1_1);
 
         textArea_1 = new JTextArea();
-        textArea_1.setFont(new Font("Arial", Font.PLAIN, 25));
+        textArea_1.setFont(new Font("Arial", Font.PLAIN, 14));
         textArea_1.setBackground(new Color(255, 250, 205));
         scrollPane_1_1.setViewportView(textArea_1);
 
+        // Right panel - Physical Memory
+        lblNewLabel_1_1 = new JLabel("Physical Memory (Frame : Page)");
+        lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 16));
+        lblNewLabel_1_1.setBounds(610, 85, 320, 25);
+        this.getContentPane().add(lblNewLabel_1_1);
+
         scrollPane_1_2 = new JScrollPane();
-        scrollPane_1_2.setBounds(1071, 55, 442, 833);
+        scrollPane_1_2.setBounds(610, 115, 270, 350);
         this.getContentPane().add(scrollPane_1_2);
 
         textArea_2 = new JTextArea();
-        textArea_2.setFont(new Font("Arial", Font.PLAIN, 25));
+        textArea_2.setFont(new Font("Arial", Font.PLAIN, 14));
         textArea_2.setBackground(new Color(255, 250, 205));
         scrollPane_1_2.setViewportView(textArea_2);
 
-        lblNewLabel = new JLabel("Processes and their virtual addresses");
-        lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel.setBounds(49, 67, 421, 53);
-        this.getContentPane().add(lblNewLabel);
+        // Bottom controls
+        btnNewButton_1_1 = new JButton("Find Info");
+        btnNewButton_1_1.setFont(new Font("Arial", Font.PLAIN, 16));
+        btnNewButton_1_1.setBounds(20, 480, 135, 45);
+        btnNewButton_1_1.setBackground(new Color(255, 250, 205));
+        this.getContentPane().add(btnNewButton_1_1);
 
-        lblNewLabel_1 = new JLabel("Translation lookaside buffer");
-        lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_1.setBounds(560, 151, 421, 53);
-        this.getContentPane().add(lblNewLabel_1);
+        btnNewButton_1 = new JButton("Place Page");
+        btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 16));
+        btnNewButton_1.setBounds(165, 480, 135, 45);
+        btnNewButton_1.setBackground(new Color(255, 250, 205));
+        this.getContentPane().add(btnNewButton_1);
 
-        lblNewLabel_2 = new JLabel("Page tables");
-        lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_2.setBounds(570, 486, 421, 53);
-        this.getContentPane().add(lblNewLabel_2);
-
-        lblNewLabel_1_1 = new JLabel("Physical memory");
-        lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_1_1.setBounds(1082, 0, 421, 53);
-        this.getContentPane().add(lblNewLabel_1_1);
-
-        lblNewLabel_3 = new JLabel("Virtual memory simulator");
-        lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 35));
-        lblNewLabel_3.setBounds(544, 25, 449, 65);
-        this.getContentPane().add(lblNewLabel_3);
-
+        // Input fields
+        lblNewLabel_4 = new JLabel("Process:");
+        lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblNewLabel_4.setBounds(20, 540, 70, 25);
+        this.getContentPane().add(lblNewLabel_4);
 
         textField = new JTextField();
-        textField.setFont(new Font("Arial", Font.PLAIN, 11));
-        textField.setBounds(312, 923, 96, 46);
+        textField.setFont(new Font("Arial", Font.PLAIN, 14));
+        textField.setBounds(90, 540, 70, 28);
         textField.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textField);
         textField.setColumns(10);
 
+        lblNewLabel_4_1 = new JLabel("Page:");
+        lblNewLabel_4_1.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblNewLabel_4_1.setBounds(170, 540, 50, 25);
+        this.getContentPane().add(lblNewLabel_4_1);
+
         textField_1 = new JTextField();
-        textField_1.setFont(new Font("Arial", Font.PLAIN, 11));
+        textField_1.setFont(new Font("Arial", Font.PLAIN, 14));
         textField_1.setColumns(10);
-        textField_1.setBounds(438, 923, 96, 46);
+        textField_1.setBounds(220, 540, 70, 28);
         textField_1.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textField_1);
 
-        lblNewLabel_4 = new JLabel("process");
-        lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 15));
-        lblNewLabel_4.setBounds(322, 907, 69, 14);
-        this.getContentPane().add(lblNewLabel_4);
-
-        lblNewLabel_4_1 = new JLabel("page");
-        lblNewLabel_4_1.setFont(new Font("Arial", Font.PLAIN, 15));
-        lblNewLabel_4_1.setBounds(460, 907, 49, 14);
-        this.getContentPane().add(lblNewLabel_4_1);
-
-        btnNewButton_1 = new JButton("Place page");
-        btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 30));
-        btnNewButton_1.setBounds(312, 820, 189, 76);
-        btnNewButton_1.setBackground(new Color(255, 250, 205));
-        this.getContentPane().add(btnNewButton_1);
-
-        btnNewButton_1_1 = new JButton("Find information");
-        btnNewButton_1_1.setFont(new Font("Arial", Font.PLAIN, 30));
-        btnNewButton_1_1.setBounds(10, 820, 279, 76);
-        btnNewButton_1_1.setBackground(new Color(255, 250, 205));
-        this.getContentPane().add(btnNewButton_1_1);
-
-
-        lblNewLabel_5 = new JLabel("Statics");
-        lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_5.setBounds(876, 834, 175, 53);
-        this.getContentPane().add(lblNewLabel_5);
-
-        lblNewLabel_6 = new JLabel("Hit:");
-        lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 15));
-        lblNewLabel_6.setBounds(864, 898, 81, 33);
-        this.getContentPane().add(lblNewLabel_6);
-
-        lblNewLabel_6_1 = new JLabel("Miss:");
-        lblNewLabel_6_1.setFont(new Font("Arial", Font.PLAIN, 15));
-        lblNewLabel_6_1.setBounds(864, 938, 81, 33);
-        this.getContentPane().add(lblNewLabel_6_1);
-
-        lblNewLabel_7 = new JLabel("Time:");
-        lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 26));
-        lblNewLabel_7.setBounds(560, 106, 119, 34);
-        this.getContentPane().add(lblNewLabel_7);
-
-        textArea_3 = new JTextArea();
-        textArea_3.setFont(new Font("Arial", Font.PLAIN, 15));
-        textArea_3.setBounds(901, 898, 101, 33);
-        textArea_3.setBackground(new Color(255, 250, 205));
-        this.getContentPane().add(textArea_3);
-
-        textArea_3_1 = new JTextArea();
-        textArea_3_1.setFont(new Font("Arial", Font.PLAIN, 15));
-        textArea_3_1.setBounds(901, 938, 101, 33);
-        textArea_3_1.setBackground(new Color(255, 250, 205));
-        this.getContentPane().add(textArea_3_1);
-
-
-        lblNewLabel_4_1_1 = new JLabel("offset");
-        lblNewLabel_4_1_1.setFont(new Font("Arial", Font.PLAIN, 15));
-        lblNewLabel_4_1_1.setBounds(560, 908, 49, 14);
+        lblNewLabel_4_1_1 = new JLabel("Offset:");
+        lblNewLabel_4_1_1.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblNewLabel_4_1_1.setBounds(20, 580, 70, 25);
         this.getContentPane().add(lblNewLabel_4_1_1);
 
         textField_2 = new JTextField();
-        textField_2.setFont(new Font("Arial", Font.PLAIN, 11));
+        textField_2.setFont(new Font("Arial", Font.PLAIN, 14));
         textField_2.setColumns(10);
-        textField_2.setBounds(560, 923, 96, 46);
+        textField_2.setBounds(90, 580, 70, 28);
         textField_2.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(textField_2);
 
+        // Statistics panel
+        lblNewLabel_5 = new JLabel("Statistics");
+        lblNewLabel_5.setFont(new Font("Arial", Font.BOLD, 18));
+        lblNewLabel_5.setBounds(610, 480, 150, 30);
+        this.getContentPane().add(lblNewLabel_5);
 
-        textArea_3_2 = new JTextArea();
-        textArea_3_2.setFont(new Font("Arial", Font.PLAIN, 17));
-        textArea_3_2.setBounds(644, 107, 101, 33);
-        textArea_3_2.setBackground(new Color(255, 250, 205));
-        this.getContentPane().add(textArea_3_2);
+        lblNewLabel_6 = new JLabel("Hits:");
+        lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblNewLabel_6.setBounds(610, 520, 60, 25);
+        this.getContentPane().add(lblNewLabel_6);
 
+        textArea_3 = new JTextArea();
+        textArea_3.setFont(new Font("Arial", Font.PLAIN, 14));
+        textArea_3.setBounds(670, 520, 70, 25);
+        textArea_3.setBackground(new Color(255, 250, 205));
+        textArea_3.setEditable(false);
+        this.getContentPane().add(textArea_3);
 
-        lblNewLabel_8 = new JLabel("Page+offset");
-        lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_8.setBounds(144, 118, 300, 33);
-        this.getContentPane().add(lblNewLabel_8);
+        lblNewLabel_6_1 = new JLabel("Misses:");
+        lblNewLabel_6_1.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblNewLabel_6_1.setBounds(610, 555, 60, 25);
+        this.getContentPane().add(lblNewLabel_6_1);
 
-        lblNewLabel_8_1 = new JLabel("Frame+page");
-        lblNewLabel_8_1.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_8_1.setBounds(1213, 911, 300, 33);
-        this.getContentPane().add(lblNewLabel_8_1);
-
-        lblNewLabel_8_2 = new JLabel("Page+frame");
-        lblNewLabel_8_2.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_8_2.setBounds(603, 198, 300, 33);
-        this.getContentPane().add(lblNewLabel_8_2);
-
-        lblNewLabel_8_3 = new JLabel("Page+frame+present bit");
-        lblNewLabel_8_3.setFont(new Font("Arial", Font.PLAIN, 25));
-        lblNewLabel_8_3.setBounds(644, 805, 300, 33);
-        this.getContentPane().add(lblNewLabel_8_3);
+        textArea_3_1 = new JTextArea();
+        textArea_3_1.setFont(new Font("Arial", Font.PLAIN, 14));
+        textArea_3_1.setBounds(670, 555, 70, 25);
+        textArea_3_1.setBackground(new Color(255, 250, 205));
+        textArea_3_1.setEditable(false);
+        this.getContentPane().add(textArea_3_1);
 
         this.setVisible(true);
     }
@@ -255,7 +235,6 @@ public class SelectionView extends JFrame {
         this.textArea_3_1.setText(String.valueOf(TextArea_3_1));
     }
 
-
     public int gettextField1() {
         return Integer.parseInt(textField.getText());
     }
@@ -275,6 +254,4 @@ public class SelectionView extends JFrame {
     public void addCreateListener3(ActionListener action) {
         btnNewButton_1_1.addActionListener(action);
     }
-
-
 }

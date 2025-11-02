@@ -22,22 +22,20 @@ public class UserView extends JFrame {
     public UserView() {
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(100, 100, 1572, 1032);
+        // Set a smaller window size
+        this.setBounds(100, 100, 1200, 800); // Updated size to make the window smaller
         this.getContentPane().setBackground(new Color(255, 215, 0));
-        // this.getContentPane().setBorder(new EmptyBorder(5, 5, 5, 5));
 
         this.getContentPane().setLayout(null);
 
-
         lblNewLabel_3 = new JLabel("Virtual memory simulator");
-        lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 44));
-        lblNewLabel_3.setBounds(544, 25, 547, 65);
+        lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 36)); // Adjusted font size
+        lblNewLabel_3.setBounds(400, 25, 547, 65);
         this.getContentPane().add(lblNewLabel_3);
 
-
         btnNewButton = new JButton("Please insert");
-        btnNewButton.setFont(new Font("Arial", Font.PLAIN, 40));
-        btnNewButton.setBounds(758, 785, 426, 84);
+        btnNewButton.setFont(new Font("Arial", Font.PLAIN, 30)); // Adjusted font size for button
+        btnNewButton.setBounds(450, 650, 300, 60); // Moved button closer and made it smaller
         btnNewButton.setBackground(new Color(255, 250, 205));
         this.getContentPane().add(btnNewButton);
 
@@ -101,9 +99,7 @@ public class UserView extends JFrame {
         lblNewLabel_4_1_2_1.setBounds(479, 206, 300, 40);
         this.getContentPane().add(lblNewLabel_4_1_2_1);
 
-
         this.setVisible(true);
-
     }
 
     public int gettextField() {
