@@ -12,7 +12,6 @@ public class DebugUtilsTest {
     }
 
 
-
     @Test
     @DisplayName("Valid configuration should pass validation")
     public void testValidConfiguration() {
@@ -68,12 +67,10 @@ public class DebugUtilsTest {
                 IllegalArgumentException.class,
                 () -> DebugUtils.validateSystemConfiguration(4, 1024, 0, 2048, 8)
         );
-
         assertThrows(
                 IllegalArgumentException.class,
                 () -> DebugUtils.validateSystemConfiguration(4, 1024, -1, 2048, 8)
         );
-
         assertThrows(
                 IllegalArgumentException.class,
                 () -> DebugUtils.validateSystemConfiguration(4, 1024, 32, 2048, 8)
@@ -96,9 +93,7 @@ public class DebugUtilsTest {
                 IllegalArgumentException.class,
                 () -> DebugUtils.validateSystemConfiguration(-1, 1000, 0, 512, -5)
         );
-
         String message = exception.getMessage();
-        // Should contain multiple error messages
         assertTrue(message.contains("processes"));
         assertTrue(message.contains("power of 2"));
         assertTrue(message.contains("offset"));
@@ -107,12 +102,9 @@ public class DebugUtilsTest {
     @Test
     @DisplayName("Boundary values should be accepted")
     public void testBoundaryValues() {
-
         assertDoesNotThrow(() -> {
             DebugUtils.validateSystemConfiguration(1, 256, 2, 256, 1);
         });
-
-
         assertDoesNotThrow(() -> {
             DebugUtils.validateSystemConfiguration(10, 65536, 12, 131072, 64);
         });
@@ -123,15 +115,12 @@ public class DebugUtilsTest {
     @Test
     @DisplayName("isPowerOfTwo should correctly identify powers of 2")
     public void testIsPowerOfTwo() {
-
         assertTrue(DebugUtils.isPowerOfTwo(1));
         assertTrue(DebugUtils.isPowerOfTwo(2));
         assertTrue(DebugUtils.isPowerOfTwo(4));
         assertTrue(DebugUtils.isPowerOfTwo(8));
         assertTrue(DebugUtils.isPowerOfTwo(1024));
         assertTrue(DebugUtils.isPowerOfTwo(65536));
-
-
         assertFalse(DebugUtils.isPowerOfTwo(0));
         assertFalse(DebugUtils.isPowerOfTwo(-1));
         assertFalse(DebugUtils.isPowerOfTwo(3));
@@ -171,7 +160,6 @@ public class DebugUtilsTest {
         assertTrue(explanation.contains("Offset: 12"));
         assertTrue(explanation.contains("("));
     }
-
 
 
     @Test
@@ -234,12 +222,9 @@ public class DebugUtilsTest {
     @Test
     @DisplayName("Very small page size should trigger warning")
     public void testVerySmallPageSize() {
-
         assertDoesNotThrow(() -> {
             DebugUtils.validateSystemConfiguration(4, 1024, 4, 2048, 8);
         });
-
-
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> DebugUtils.validateSystemConfiguration(4, 1024, 2, 2048, 8)
@@ -250,7 +235,6 @@ public class DebugUtilsTest {
     @Test
     @DisplayName("Page size too large relative to physical memory should fail")
     public void testPageSizeTooLarge() {
-
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> DebugUtils.validateSystemConfiguration(2, 512, 8, 1024, 4)
@@ -263,17 +247,12 @@ public class DebugUtilsTest {
     @Test
     @DisplayName("Realistic configuration scenarios should work")
     public void testRealisticScenarios() {
-
         assertDoesNotThrow(() -> {
             DebugUtils.validateSystemConfiguration(2, 1024, 4, 2048, 4);
         });
-
-
         assertDoesNotThrow(() -> {
             DebugUtils.validateSystemConfiguration(8, 16384, 8, 65536, 16);
         });
-
-
         assertDoesNotThrow(() -> {
             DebugUtils.validateSystemConfiguration(16, 65536, 12, 262144, 32);
         });
