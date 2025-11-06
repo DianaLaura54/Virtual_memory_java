@@ -14,7 +14,6 @@ public class DebugUtils {
     private static boolean isDebugMode = true;
     static {
         try {
-
             fileHandler = new FileHandler("virtual_memory_debug.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             LOGGER.addHandler(fileHandler);
@@ -24,8 +23,7 @@ public class DebugUtils {
         }
     }
 
-    public static void validateSystemConfiguration(int numProcesses, int physicalSize,
-                                                   int offsetBits, int virtualSize, int tlbSize) {
+    public static void validateSystemConfiguration(int numProcesses, int physicalSize, int offsetBits, int virtualSize, int tlbSize) {
         log(Level.INFO, "Validating system configuration...");
         StringBuilder errors = new StringBuilder();
         if (numProcesses <= 0) {
@@ -80,8 +78,7 @@ public class DebugUtils {
 
 
     public static void validatePageTableOperation(int processId, int pageNumber, int frame,
-                                                  List<PageTable> pageTableList,
-                                                  int maxProcesses, int maxPages) {
+              List<PageTable> pageTableList, int maxProcesses, int maxPages) {
         if (processId <= 0 || processId > maxProcesses) {
             throw new IllegalArgumentException(
                     String.format("Invalid process ID: %d (must be between 1 and %d)",
@@ -104,8 +101,7 @@ public class DebugUtils {
     }
 
 
-    public static void validateTlbOperation(int processId, int pageNumber, int frame,
-                                            List<Tlb> buffer, int maxProcesses) {
+    public static void validateTlbOperation(int processId, int pageNumber, int frame, List<Tlb> buffer, int maxProcesses) {
         if (processId <= 0 || processId > maxProcesses) {
             throw new IllegalArgumentException(
                     String.format("Invalid process ID for TLB: %d", processId));
@@ -121,8 +117,7 @@ public class DebugUtils {
                 processId, pageNumber));
     }
 
-    public static void verifyPageTableConsistency(List<PageTable> pageTableList,
-                                                  int physicalSize, int offsetBits) {
+    public static void verifyPageTableConsistency(List<PageTable> pageTableList, int physicalSize, int offsetBits) {
         log(Level.INFO, "Verifying page table consistency...");
         int maxFrames = (int) (physicalSize / Math.pow(2, offsetBits));
         int[] frameUsageCount = new int[maxFrames];
@@ -166,8 +161,7 @@ public class DebugUtils {
                         ptEntry.getValid() == 1) {
                     foundMatch = true;
                     if (ptEntry.getFrame() != tlbFrame) {
-                        log(Level.WARNING, String.format(
-                                "TLB/Page Table mismatch: Process=%d, Page=%d, TLB Frame=%d, PT Frame=%d",
+                        log(Level.WARNING, String.format("TLB/Page Table mismatch: Process=%d, Page=%d, TLB Frame=%d, PT Frame=%d",
                                 process, page, tlbFrame, ptEntry.getFrame()));
                     }
                     break;
@@ -266,8 +260,7 @@ public class DebugUtils {
         int totalBits = offsetBits + bitsNeeded(pageNumber);
         String pageBinary = formatBinaryAddress(pageNumber, totalBits - offsetBits);
         String offsetBinary = formatBinaryAddress(offset, offsetBits);
-        return String.format("Page: %d (%s), Offset: %d (%s)",
-                pageNumber, pageBinary, offset, offsetBinary);
+        return String.format("Page: %d (%s), Offset: %d (%s)", pageNumber, pageBinary, offset, offsetBinary);
     }
 
 

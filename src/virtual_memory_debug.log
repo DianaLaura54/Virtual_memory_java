@@ -164,3 +164,86 @@ SEVERE: [2025-11-02 14:56:09] Configuration validation failed:
 - Virtual memory size must be >= physical memory size (virtual: 1024, physical: 2048)
 - Page size is very small (16 bytes). Consider larger offset.
 
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Page size is very small (4 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Number of processes must be positive (got: 0)
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- TLB size must be positive (got: -1)
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Page size (256) is too large relative to physical memory (512)
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Offset bits must be positive (got: 0)
+- Page size is very small (1 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Offset bits must be positive (got: -1)
+- Page size is very small (0 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Offset bits must be less than 32 (got: 32)
+- Page size (2147483647) is too large relative to physical memory (1024)
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Number of processes seems unreasonably high (got: 1000)
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Number of processes must be positive (got: -1)
+- Physical memory size must be a power of 2 (got: 1000)
+- Offset bits must be positive (got: 0)
+- Virtual memory size must be >= physical memory size (virtual: 512, physical: 1000)
+- TLB size must be positive (got: -5)
+- Page size is very small (1 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Physical memory size must be a power of 2 (got: 1000)
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Assertion failed: Expected failure
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Parameter 'testParam' cannot be null
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- TLB size seems unreasonably high (got: 2000)
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Number of processes must be positive (got: -1)
+- Page size is very small (16 bytes). Consider larger offset.
+
+nov. 05, 2025 9:57:26 P.M. utils.DebugUtils log
+SEVERE: [2025-11-05 21:57:26] Configuration validation failed:
+- Virtual memory size must be >= physical memory size (virtual: 1024, physical: 2048)
+- Page size is very small (16 bytes). Consider larger offset.
+

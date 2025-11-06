@@ -111,7 +111,6 @@ public class DebugUtilsTest {
     }
 
 
-
     @Test
     @DisplayName("isPowerOfTwo should correctly identify powers of 2")
     public void testIsPowerOfTwo() {
